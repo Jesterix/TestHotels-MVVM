@@ -51,8 +51,11 @@ final class DetailViewController: UIViewController {
             + "\(viewModel.details.value?.distance ?? viewModel.hotel.distance)"
         detailView.starsLabel.text = "⭐️: "
             + "\(viewModel.details.value?.stars ?? viewModel.hotel.stars)"
+        
+        let suites: [String] = viewModel.details.value?.suitesAvailability
+            ?? viewModel.hotel.suitesAvailability
         detailView.suitesAvailableLabel.text = "Suites available: "
-            + "\(viewModel.details.value?.suitesAvailability.joined(separator: ", ") ?? viewModel.hotel.suitesAvailability.joined(separator: ", "))"
+            + "\(suites.joined(separator: ", "))"
         
         detailView.lattitudeLabel.text = "Lattitude: "
             + "\(viewModel.details.value?.lat ?? 0)"
