@@ -115,8 +115,7 @@ extension MainViewController: UITableViewDataSource {
         
         cell.nameLabel.text = viewModel.hotels.value[indexPath.row].name
         cell.distanceLabel.text = "Distance from center: " + String(viewModel.hotels.value[indexPath.row].distance)
-        cell.suitesAvailableLabel.text =
-        "Available suites: \(viewModel.hotels.value[indexPath.row].suitesAvailability.count)"
+        cell.suitesAvailableLabel.text = "Available suites: \(viewModel.hotels.value[indexPath.row].suitesAvailability.count)"
         
         return cell
     }
