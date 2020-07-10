@@ -1,12 +1,21 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-    
     var mainView: MainView!
-    var hotels: [Hotel] = []
     var networkManager = NetworkManager()
     
+    private var viewModel: HotelsViewModel
+    
     let reuseID = "hotelCell"
+    
+    init(viewModel: HotelsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         mainView = MainView()
@@ -21,7 +30,8 @@ final class MainViewController: UIViewController {
             HotelCell.self,
             forCellReuseIdentifier: reuseID)
         
-        loadData()
+        bindViewModel()
+        viewModel.fetch()
         
         mainView.switchControl.addTarget(
             self,
@@ -33,19 +43,11 @@ final class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    func loadData() {
-        mainView.activityIndicator.startAnimating()
-        networkManager.getHotelListData { result in
-            DispatchQueue.main.async {
-                self.mainView.activityIndicator.stopAnimating()
-                switch result {
-                case .success(let response):
-                    self.hotels = response
-                    self.mainView.tableView.reloadData()
-                case .failure(let error):
-                    print(error)
-                }
-            }
+    func bindViewModel() {
+        viewModel.refreshing.bind(
+            to: mainView.activityIndicator.reactive.isAnimating)
+        viewModel.hotels.bind(to: self) { _, _ in
+            self.mainView.tableView.reloadData()
         }
     }
     
@@ -84,10 +86,10 @@ final class MainViewController: UIViewController {
     
     @objc func sortHotels() {
         if mainView.switchControl.isOn {
-            hotels.sort
+            viewModel.hotels.value.sort
                 { $0.suitesAvailability.count < $1.suitesAvailability.count }
         } else {
-            hotels.sort
+            viewModel.hotels.value.sort
                 { $0.distance < $1.distance }
         }
         mainView.tableView.reloadData()
@@ -99,7 +101,7 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        hotels.count
+        viewModel.hotels.value.count
     }
     
     func tableView(
@@ -111,10 +113,10 @@ extension MainViewController: UITableViewDataSource {
                 fatalError("invalid cell type")
         }
         
-        cell.nameLabel.text = hotels[indexPath.row].name
-        cell.distanceLabel.text = "Distance from center: " + String(hotels[indexPath.row].distance)
+        cell.nameLabel.text = viewModel.hotels.value[indexPath.row].name
+        cell.distanceLabel.text = "Distance from center: " + String(viewModel.hotels.value[indexPath.row].distance)
         cell.suitesAvailableLabel.text =
-        "Available suites: \(hotels[indexPath.row].suitesAvailability.count)"
+        "Available suites: \(viewModel.hotels.value[indexPath.row].suitesAvailability.count)"
         
         return cell
     }
@@ -127,12 +129,12 @@ extension MainViewController: UITableViewDelegate {
     ) {
         tableView.deselectRow(at: indexPath, animated: false)
         mainView.activityIndicator.startAnimating()
-        loadDetails(for: String(self.hotels[indexPath.row].id)) { details in
+        loadDetails(for: String(self.viewModel.hotels.value[indexPath.row].id)) { details in
             guard let name = details.imageName else {
                 self.mainView.activityIndicator.stopAnimating()
                 self.navigationController?.pushViewController(
                     DetailViewController(
-                        hotel: self.hotels[indexPath.row],
+                        hotel: self.viewModel.hotels.value[indexPath.row],
                         details: details,
                         image: UIImage()),
                     animated: true)
@@ -144,7 +146,7 @@ extension MainViewController: UITableViewDelegate {
                 self.mainView.activityIndicator.stopAnimating()
                 self.navigationController?.pushViewController(
                     DetailViewController(
-                        hotel: self.hotels[indexPath.row],
+                        hotel: self.viewModel.hotels.value[indexPath.row],
                         details: details,
                         image: image.imageWithoutBorder(width: 1) ?? image),
                     animated: true)
