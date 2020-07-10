@@ -2,10 +2,12 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     var detailView: DetailView!
-    var hotel: Hotel
+    var viewModel: DetailViewModel
     
     init(hotel: Hotel) {
-        self.hotel = hotel
+        self.viewModel = DetailViewModel(
+            dataManager: NetworkManager(),
+            hotel: hotel)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -21,16 +23,16 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailView.nameLabel.text = hotel.name
+        detailView.nameLabel.text = viewModel.hotel.name
 //        detailView.imageView.image = hotelImage
-        detailView.addressLabel.text = "Address: " + hotel.address
+        detailView.addressLabel.text = "Address: " + viewModel.hotel.address
 //        detailView.lattitudeLabel.text = "Lattitude: \(hotelDetails.lat)"
 //        detailView.longtitudeLabel.text = "Longtitude: \(hotelDetails.lon)"
         detailView.distanceLabel.text =
-            "Distance from center: " + String(hotel.distance)
-        detailView.starsLabel.text = "⭐️: " + String(hotel.stars)
+            "Distance from center: " + String(viewModel.hotel.distance)
+        detailView.starsLabel.text = "⭐️: " + String(viewModel.hotel.stars)
         detailView.suitesAvailableLabel.text = "Suites available: " +
-            hotel.suitesAvailability.joined(separator: ", ")
+            viewModel.hotel.suitesAvailability.joined(separator: ", ")
     }
     
     override func viewWillAppear(_ animated: Bool) {
