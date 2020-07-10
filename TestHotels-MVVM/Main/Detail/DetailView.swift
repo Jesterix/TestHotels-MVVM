@@ -9,6 +9,7 @@ final class DetailView: UIView {
     var distanceLabel: UILabel!
     var starsLabel: UILabel!
     var suitesAvailableLabel: UILabel!
+    var activityIndicator: UIActivityIndicatorView!
 
     init() {
         super.init(frame: .zero)
@@ -64,6 +65,10 @@ final class DetailView: UIView {
             make.top.equalTo(distanceLabel.bottom).offset(5)
             make.leading.trailing.equalTo(nameLabel)
         }
+        
+        activityIndicator = layout(UIActivityIndicatorView()) { make in
+            make.center.equalTo(imageView)
+        }
     }
 
     private func applyStyle() {
@@ -87,6 +92,8 @@ final class DetailView: UIView {
          suitesAvailableLabel].forEach { item in
             item?.font = .systemFont(ofSize: 13)
         }
+        
+        activityIndicator.style = UIActivityIndicatorView.Style.medium
     }
 }
 

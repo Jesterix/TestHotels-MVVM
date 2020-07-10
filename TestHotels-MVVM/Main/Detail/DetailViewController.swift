@@ -22,20 +22,38 @@ final class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        detailView.nameLabel.text = viewModel.hotel.name
-//        detailView.imageView.image = hotelImage
-        detailView.addressLabel.text = "Address: " + viewModel.hotel.address
-//        detailView.lattitudeLabel.text = "Lattitude: \(hotelDetails.lat)"
-//        detailView.longtitudeLabel.text = "Longtitude: \(hotelDetails.lon)"
-        detailView.distanceLabel.text =
-            "Distance from center: " + String(viewModel.hotel.distance)
-        detailView.starsLabel.text = "⭐️: " + String(viewModel.hotel.stars)
-        detailView.suitesAvailableLabel.text = "Suites available: " +
-            viewModel.hotel.suitesAvailability.joined(separator: ", ")
+        setupData()
+        bindViewModel()
+        viewModel.fetch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    func bindViewModel() {
+        viewModel.refreshing.bind(
+            to: detailView.activityIndicator.reactive.isAnimating)
+        viewModel.details.bind(to: self) { _, _ in
+            self.setupData()
+        }
+        viewModel.image.bind(to: self) { _, _ in
+            self.loadImage()
+        }
+    }
+    
+    func setupData() {
+        detailView.nameLabel.text = viewModel.details.value?.name ?? viewModel.hotel.name
+        detailView.addressLabel.text = "Address: \(viewModel.details.value?.address ?? viewModel.hotel.address)"
+        detailView.distanceLabel.text = "Distance from center: \(viewModel.details.value?.distance ?? viewModel.hotel.distance)"
+        detailView.starsLabel.text = "⭐️: \(viewModel.details.value?.stars ?? viewModel.hotel.stars)"
+        detailView.suitesAvailableLabel.text = "Suites available: \(viewModel.details.value?.suitesAvailability.joined(separator: ", ") ?? viewModel.hotel.suitesAvailability.joined(separator: ", "))"
+        
+        detailView.lattitudeLabel.text = "Lattitude: \(viewModel.details.value?.lat ?? 0)"
+        detailView.longtitudeLabel.text = "Longtitude: \(viewModel.details.value?.lon ?? 0)"
+    }
+    
+    func loadImage() {
+        detailView.imageView.image = viewModel.image.value
     }
 }
