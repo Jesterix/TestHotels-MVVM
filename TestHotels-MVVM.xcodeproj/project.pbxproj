@@ -3,27 +3,44 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5E085CFD24B862AB0028AAE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085CFC24B862AB0028AAE5 /* AppDelegate.swift */; };
 		5E085CFF24B862AB0028AAE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085CFE24B862AB0028AAE5 /* SceneDelegate.swift */; };
-		5E085D0124B862AB0028AAE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D0024B862AB0028AAE5 /* ViewController.swift */; };
-		5E085D0424B862AB0028AAE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E085D0224B862AB0028AAE5 /* Main.storyboard */; };
 		5E085D0624B862B30028AAE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E085D0524B862B30028AAE5 /* Assets.xcassets */; };
 		5E085D0924B862B30028AAE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E085D0724B862B30028AAE5 /* LaunchScreen.storyboard */; };
+		5E085D2F24B863C70028AAE5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D2C24B863C70028AAE5 /* MainView.swift */; };
+		5E085D3024B863C70028AAE5 /* HotelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D2D24B863C70028AAE5 /* HotelCell.swift */; };
+		5E085D3124B863C70028AAE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D2E24B863C70028AAE5 /* MainViewController.swift */; };
+		5E085D3524B863E00028AAE5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3224B863E00028AAE5 /* NetworkManager.swift */; };
+		5E085D3624B863E00028AAE5 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3324B863E00028AAE5 /* Hotel.swift */; };
+		5E085D3724B863E00028AAE5 /* HotelDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3424B863E00028AAE5 /* HotelDetails.swift */; };
+		5E085D3A24B863EF0028AAE5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3824B863EF0028AAE5 /* DetailViewController.swift */; };
+		5E085D3B24B863EF0028AAE5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3924B863EF0028AAE5 /* DetailView.swift */; };
+		5E085D3E24B863FB0028AAE5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3C24B863FA0028AAE5 /* Extensions.swift */; };
+		5E085D3F24B863FB0028AAE5 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */; };
+		5E085D4224B864AA0028AAE5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5E085D4124B864AA0028AAE5 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E085CF924B862AB0028AAE5 /* TestHotels-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestHotels-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E085CFC24B862AB0028AAE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E085CFE24B862AB0028AAE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5E085D0024B862AB0028AAE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5E085D0324B862AB0028AAE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E085D0524B862B30028AAE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E085D0824B862B30028AAE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E085D0A24B862B30028AAE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E085D2C24B863C70028AAE5 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5E085D2D24B863C70028AAE5 /* HotelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelCell.swift; sourceTree = "<group>"; };
+		5E085D2E24B863C70028AAE5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5E085D3224B863E00028AAE5 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5E085D3324B863E00028AAE5 /* Hotel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		5E085D3424B863E00028AAE5 /* HotelDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetails.swift; sourceTree = "<group>"; };
+		5E085D3824B863EF0028AAE5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5E085D3924B863EF0028AAE5 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5E085D3C24B863FA0028AAE5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E085D4224B864AA0028AAE5 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +76,16 @@
 			children = (
 				5E085CFC24B862AB0028AAE5 /* AppDelegate.swift */,
 				5E085CFE24B862AB0028AAE5 /* SceneDelegate.swift */,
-				5E085D0024B862AB0028AAE5 /* ViewController.swift */,
-				5E085D0224B862AB0028AAE5 /* Main.storyboard */,
+				5E085D2D24B863C70028AAE5 /* HotelCell.swift */,
+				5E085D2C24B863C70028AAE5 /* MainView.swift */,
+				5E085D2E24B863C70028AAE5 /* MainViewController.swift */,
+				5E085D3324B863E00028AAE5 /* Hotel.swift */,
+				5E085D3424B863E00028AAE5 /* HotelDetails.swift */,
+				5E085D3224B863E00028AAE5 /* NetworkManager.swift */,
+				5E085D3924B863EF0028AAE5 /* DetailView.swift */,
+				5E085D3C24B863FA0028AAE5 /* Extensions.swift */,
+				5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */,
+				5E085D3824B863EF0028AAE5 /* DetailViewController.swift */,
 				5E085D0524B862B30028AAE5 /* Assets.xcassets */,
 				5E085D0724B862B30028AAE5 /* LaunchScreen.storyboard */,
 				5E085D0A24B862B30028AAE5 /* Info.plist */,
@@ -83,6 +109,9 @@
 			dependencies = (
 			);
 			name = "TestHotels-MVVM";
+			packageProductDependencies = (
+				5E085D4124B864AA0028AAE5 /* SnapKit */,
+			);
 			productName = "TestHotels-MVVM";
 			productReference = 5E085CF924B862AB0028AAE5 /* TestHotels-MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 5E085CF024B862AB0028AAE5;
+			packageReferences = (
+				5E085D4024B864AA0028AAE5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 5E085CFA24B862AB0028AAE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +159,6 @@
 			files = (
 				5E085D0924B862B30028AAE5 /* LaunchScreen.storyboard in Resources */,
 				5E085D0624B862B30028AAE5 /* Assets.xcassets in Resources */,
-				5E085D0424B862AB0028AAE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +169,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E085D0124B862AB0028AAE5 /* ViewController.swift in Sources */,
+				5E085D3A24B863EF0028AAE5 /* DetailViewController.swift in Sources */,
+				5E085D3F24B863FB0028AAE5 /* UIView+SnapKit.swift in Sources */,
+				5E085D3524B863E00028AAE5 /* NetworkManager.swift in Sources */,
 				5E085CFD24B862AB0028AAE5 /* AppDelegate.swift in Sources */,
+				5E085D3B24B863EF0028AAE5 /* DetailView.swift in Sources */,
+				5E085D2F24B863C70028AAE5 /* MainView.swift in Sources */,
+				5E085D3024B863C70028AAE5 /* HotelCell.swift in Sources */,
 				5E085CFF24B862AB0028AAE5 /* SceneDelegate.swift in Sources */,
+				5E085D3124B863C70028AAE5 /* MainViewController.swift in Sources */,
+				5E085D3624B863E00028AAE5 /* Hotel.swift in Sources */,
+				5E085D3E24B863FB0028AAE5 /* Extensions.swift in Sources */,
+				5E085D3724B863E00028AAE5 /* HotelDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5E085D0224B862AB0028AAE5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E085D0324B862AB0028AAE5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5E085D0724B862B30028AAE5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -338,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5E085D4024B864AA0028AAE5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5E085D4124B864AA0028AAE5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E085D4024B864AA0028AAE5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5E085CF124B862AB0028AAE5 /* Project object */;
 }
