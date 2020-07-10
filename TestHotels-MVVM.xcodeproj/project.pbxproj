@@ -24,6 +24,7 @@
 		5E085D4224B864AA0028AAE5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5E085D4124B864AA0028AAE5 /* SnapKit */; };
 		5E085D4824B86AA40028AAE5 /* HotelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */; };
 		5E085D4B24B86B6B0028AAE5 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 5E085D4A24B86B6B0028AAE5 /* Bond */; };
+		5E085D4D24B87BE10028AAE5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5E085D3C24B863FA0028AAE5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 		5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsViewModel.swift; sourceTree = "<group>"; };
+		5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		5E085D4624B867060028AAE5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */,
 				5E085D3924B863EF0028AAE5 /* DetailView.swift */,
 				5E085D3824B863EF0028AAE5 /* DetailViewController.swift */,
 			);
@@ -217,6 +220,7 @@
 				5E085D2F24B863C70028AAE5 /* MainView.swift in Sources */,
 				5E085D3024B863C70028AAE5 /* HotelCell.swift in Sources */,
 				5E085CFF24B862AB0028AAE5 /* SceneDelegate.swift in Sources */,
+				5E085D4D24B87BE10028AAE5 /* DetailViewModel.swift in Sources */,
 				5E085D3124B863C70028AAE5 /* MainViewController.swift in Sources */,
 				5E085D3624B863E00028AAE5 /* Hotel.swift in Sources */,
 				5E085D3E24B863FB0028AAE5 /* Extensions.swift in Sources */,
