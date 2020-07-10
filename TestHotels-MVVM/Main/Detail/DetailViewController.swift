@@ -43,17 +43,25 @@ final class DetailViewController: UIViewController {
     }
     
     func setupData() {
-        detailView.nameLabel.text = viewModel.details.value?.name ?? viewModel.hotel.name
-        detailView.addressLabel.text = "Address: \(viewModel.details.value?.address ?? viewModel.hotel.address)"
-        detailView.distanceLabel.text = "Distance from center: \(viewModel.details.value?.distance ?? viewModel.hotel.distance)"
-        detailView.starsLabel.text = "⭐️: \(viewModel.details.value?.stars ?? viewModel.hotel.stars)"
-        detailView.suitesAvailableLabel.text = "Suites available: \(viewModel.details.value?.suitesAvailability.joined(separator: ", ") ?? viewModel.hotel.suitesAvailability.joined(separator: ", "))"
+        detailView.nameLabel.text = viewModel.details.value?.name
+            ?? viewModel.hotel.name
+        detailView.addressLabel.text = "Address: "
+            + "\(viewModel.details.value?.address ?? viewModel.hotel.address)"
+        detailView.distanceLabel.text = "Distance from center: "
+            + "\(viewModel.details.value?.distance ?? viewModel.hotel.distance)"
+        detailView.starsLabel.text = "⭐️: "
+            + "\(viewModel.details.value?.stars ?? viewModel.hotel.stars)"
+        detailView.suitesAvailableLabel.text = "Suites available: "
+            + "\(viewModel.details.value?.suitesAvailability.joined(separator: ", ") ?? viewModel.hotel.suitesAvailability.joined(separator: ", "))"
         
-        detailView.lattitudeLabel.text = "Lattitude: \(viewModel.details.value?.lat ?? 0)"
-        detailView.longtitudeLabel.text = "Longtitude: \(viewModel.details.value?.lon ?? 0)"
+        detailView.lattitudeLabel.text = "Lattitude: "
+            + "\(viewModel.details.value?.lat ?? 0)"
+        detailView.longtitudeLabel.text = "Longtitude: "
+            + "\(viewModel.details.value?.lon ?? 0)"
     }
     
     func loadImage() {
-        detailView.imageView.image = viewModel.image.value.imageWithoutBorder(width: 1)
+        detailView.imageView.image = viewModel.image.value.imageWithoutBorder(
+            width: 1)
     }
 }
