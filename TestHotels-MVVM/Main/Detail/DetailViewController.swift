@@ -54,6 +54,6 @@ final class DetailViewController: UIViewController {
     }
     
     func loadImage() {
-        detailView.imageView.image = viewModel.image.value
+        detailView.imageView.image = viewModel.image.value.imageWithoutBorder(width: 1)
     }
 }

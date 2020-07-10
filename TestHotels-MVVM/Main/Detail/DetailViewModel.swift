@@ -28,9 +28,12 @@ final class DetailViewModel {
             case .failure(let error):
                 self.error.value = error
             }
-            self.refreshing.value = false
             
-            guard let imageName = self.details.value?.imageName else { return }
+            guard let imageName = self.details.value?.imageName else {
+                self.refreshing.value = false
+                return
+            }
+            
             self.dataManager.getHotelImage(imageName: imageName) { result in
                 switch result {
                 case .success(let image):
@@ -38,6 +41,7 @@ final class DetailViewModel {
                 case .failure(let error):
                     self.error.value = error
                 }
+                self.refreshing.value = false
             }
         }
     }
