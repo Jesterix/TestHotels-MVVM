@@ -22,6 +22,8 @@
 		5E085D3E24B863FB0028AAE5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3C24B863FA0028AAE5 /* Extensions.swift */; };
 		5E085D3F24B863FB0028AAE5 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */; };
 		5E085D4224B864AA0028AAE5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5E085D4124B864AA0028AAE5 /* SnapKit */; };
+		5E085D4824B86AA40028AAE5 /* HotelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */; };
+		5E085D4B24B86B6B0028AAE5 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 5E085D4A24B86B6B0028AAE5 /* Bond */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		5E085D3924B863EF0028AAE5 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5E085D3C24B863FA0028AAE5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
+		5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E085D4224B864AA0028AAE5 /* SnapKit in Frameworks */,
+				5E085D4B24B86B6B0028AAE5 /* Bond in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,7 @@
 				5E085D2D24B863C70028AAE5 /* HotelCell.swift */,
 				5E085D2C24B863C70028AAE5 /* MainView.swift */,
 				5E085D2E24B863C70028AAE5 /* MainViewController.swift */,
+				5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			name = "TestHotels-MVVM";
 			packageProductDependencies = (
 				5E085D4124B864AA0028AAE5 /* SnapKit */,
+				5E085D4A24B86B6B0028AAE5 /* Bond */,
 			);
 			productName = "TestHotels-MVVM";
 			productReference = 5E085CF924B862AB0028AAE5 /* TestHotels-MVVM.app */;
@@ -174,6 +180,7 @@
 			mainGroup = 5E085CF024B862AB0028AAE5;
 			packageReferences = (
 				5E085D4024B864AA0028AAE5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5E085D4924B86B6B0028AAE5 /* XCRemoteSwiftPackageReference "Bond" */,
 			);
 			productRefGroup = 5E085CFA24B862AB0028AAE5 /* Products */;
 			projectDirPath = "";
@@ -202,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E085D3A24B863EF0028AAE5 /* DetailViewController.swift in Sources */,
+				5E085D4824B86AA40028AAE5 /* HotelsViewModel.swift in Sources */,
 				5E085D3F24B863FB0028AAE5 /* UIView+SnapKit.swift in Sources */,
 				5E085D3524B863E00028AAE5 /* NetworkManager.swift in Sources */,
 				5E085CFD24B862AB0028AAE5 /* AppDelegate.swift in Sources */,
@@ -412,6 +420,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		5E085D4924B86B6B0028AAE5 /* XCRemoteSwiftPackageReference "Bond" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DeclarativeHub/Bond";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -419,6 +435,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E085D4024B864AA0028AAE5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		5E085D4A24B86B6B0028AAE5 /* Bond */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E085D4924B86B6B0028AAE5 /* XCRemoteSwiftPackageReference "Bond" */;
+			productName = Bond;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
