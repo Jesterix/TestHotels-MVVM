@@ -1,11 +1,3 @@
-//
-//  MainView.swift
-//  TestHotels
-//
-//  Created by Георгий Хайденко on 25.06.2020.
-//  Copyright © 2020 George Khaydenko. All rights reserved.
-//
-
 import UIKit
 
 final class MainView: UIView {
@@ -28,44 +20,37 @@ final class MainView: UIView {
     }
 
     private func layoutContent(in view: UIView) {
-        titleLabel = layout(UILabel(text: "Hotel List"))
-        { make in
+        titleLabel = layout(UILabel(text: "Hotel List")) { make in
             make.top.equalTo(safeArea).offset(20)
             make.centerX.equalToSuperview()
         }
 
-        sortedLabel = layout(UILabel(text: "sorted by:"))
-        { make in
+        sortedLabel = layout(UILabel(text: "sorted by:")) { make in
             make.top.equalTo(titleLabel.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
 
-        switchControl = layout(UISwitch())
-        { make in
+        switchControl = layout(UISwitch()) { make in
             make.top.equalTo(sortedLabel.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
 
-        switchLeftLabel = layout(UILabel(text: "distance"))
-        { make in
+        switchLeftLabel = layout(UILabel(text: "distance")) { make in
             make.centerY.equalTo(switchControl)
             make.trailing.equalTo(switchControl.leading).offset(-10)
         }
 
-        switchRightLabel = layout(UILabel(text: "free rooms"))
-        { make in
+        switchRightLabel = layout(UILabel(text: "free rooms")) { make in
             make.centerY.equalTo(switchControl)
             make.leading.equalTo(switchControl.trailing).offset(10)
         }
 
-        tableView = layout(UITableView())
-        { make in
+        tableView = layout(UITableView()) { make in
             make.top.equalTo(switchControl.bottom).offset(10)
             make.leading.trailing.bottom.equalTo(safeArea)
         }
 
-        activityIndicator = layout(UIActivityIndicatorView())
-        { make in
+        activityIndicator = layout(UIActivityIndicatorView()) { make in
             make.center.equalToSuperview()
         }
     }

@@ -1,11 +1,3 @@
-//
-//  Hotel.swift
-//  TestHotels
-//
-//  Created by Георгий Хайденко on 25.06.2020.
-//  Copyright © 2020 George Khaydenko. All rights reserved.
-//
-
 struct Hotel: Codable {
     let id: Int
     let name: String

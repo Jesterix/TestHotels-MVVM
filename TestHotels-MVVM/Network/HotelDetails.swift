@@ -1,11 +1,3 @@
-//
-//  HotelDetails.swift
-//  TestHotels
-//
-//  Created by Георгий Хайденко on 27.06.2020.
-//  Copyright © 2020 George Khaydenko. All rights reserved.
-//
-
 struct HotelDetails: Codable {
     let imageName: String?
     let lat: Double

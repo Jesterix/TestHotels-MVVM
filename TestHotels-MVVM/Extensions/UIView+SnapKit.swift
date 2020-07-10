@@ -1,11 +1,3 @@
-//
-//  UIView+SnapKit.swift
-//  TestHotels
-//
-//  Created by Георгий Хайденко on 25.06.2020.
-//  Copyright © 2020 George Khaydenko. All rights reserved.
-//
-
 import UIKit
 import SnapKit
 
@@ -18,13 +10,13 @@ extension UIView {
 extension UIView {
     func layout<T: UIView>(
         _ subview: T,
-        _ closure: (ConstraintMaker) -> Void) -> T
-    {
+        _ closure: (ConstraintMaker) -> Void
+    ) -> T {
         self.addSubview(subview)
         subview.snp.makeConstraints(closure)
         return subview
     }
-
+    
     var top: SnapKit.ConstraintItem {
         return snp.top
     }
