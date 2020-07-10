@@ -76,21 +76,53 @@
 			children = (
 				5E085CFC24B862AB0028AAE5 /* AppDelegate.swift */,
 				5E085CFE24B862AB0028AAE5 /* SceneDelegate.swift */,
-				5E085D2D24B863C70028AAE5 /* HotelCell.swift */,
-				5E085D2C24B863C70028AAE5 /* MainView.swift */,
-				5E085D2E24B863C70028AAE5 /* MainViewController.swift */,
-				5E085D3324B863E00028AAE5 /* Hotel.swift */,
-				5E085D3424B863E00028AAE5 /* HotelDetails.swift */,
-				5E085D3224B863E00028AAE5 /* NetworkManager.swift */,
-				5E085D3924B863EF0028AAE5 /* DetailView.swift */,
-				5E085D3C24B863FA0028AAE5 /* Extensions.swift */,
-				5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */,
-				5E085D3824B863EF0028AAE5 /* DetailViewController.swift */,
+				5E085D4324B866D20028AAE5 /* Main */,
+				5E085D4424B866E90028AAE5 /* Network */,
+				5E085D4524B866FB0028AAE5 /* Extensions */,
 				5E085D0524B862B30028AAE5 /* Assets.xcassets */,
 				5E085D0724B862B30028AAE5 /* LaunchScreen.storyboard */,
 				5E085D0A24B862B30028AAE5 /* Info.plist */,
 			);
 			path = "TestHotels-MVVM";
+			sourceTree = "<group>";
+		};
+		5E085D4324B866D20028AAE5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5E085D4624B867060028AAE5 /* Detail */,
+				5E085D2D24B863C70028AAE5 /* HotelCell.swift */,
+				5E085D2C24B863C70028AAE5 /* MainView.swift */,
+				5E085D2E24B863C70028AAE5 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5E085D4424B866E90028AAE5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5E085D3324B863E00028AAE5 /* Hotel.swift */,
+				5E085D3424B863E00028AAE5 /* HotelDetails.swift */,
+				5E085D3224B863E00028AAE5 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5E085D4524B866FB0028AAE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5E085D3C24B863FA0028AAE5 /* Extensions.swift */,
+				5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5E085D4624B867060028AAE5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5E085D3924B863EF0028AAE5 /* DetailView.swift */,
+				5E085D3824B863EF0028AAE5 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
