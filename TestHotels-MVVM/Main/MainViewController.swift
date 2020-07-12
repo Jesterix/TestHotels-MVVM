@@ -1,12 +1,9 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-    var mainView: MainView!
-    var networkManager = NetworkManager()
-    
+    private var mainView: MainView!
     private var viewModel: HotelsViewModel
-    
-    let reuseID = "hotelCell"
+    private let reuseID = "hotelCell"
     
     init(viewModel: HotelsViewModel) {
         self.viewModel = viewModel
@@ -43,7 +40,7 @@ final class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.refreshing.bind(
             to: mainView.activityIndicator.reactive.isAnimating)
         viewModel.hotels.bind(to: self) { _, _ in
@@ -51,40 +48,7 @@ final class MainViewController: UIViewController {
         }
     }
     
-    func loadDetails(
-        for id: String,
-        completion: @escaping (HotelDetails) -> Void
-    ) {
-        networkManager.getHotelDetails(for: id) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let response):
-                    completion(response)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
-    }
-    
-    func loadImage(
-        imageName: String,
-        completion: @escaping (UIImage) -> Void
-    ) {
-        networkManager.getHotelImage(imageName: imageName) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let response):
-                    completion(response)
-                case .failure(let error):
-                    completion(UIImage())
-                    print(error)
-                }
-            }
-        }
-    }
-    
-    @objc func sortHotels() {
+    @objc private func sortHotels() {
         if mainView.switchControl.isOn {
             viewModel.hotels.value.sort
                 { $0.suitesAvailability.count < $1.suitesAvailability.count }
