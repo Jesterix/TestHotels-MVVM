@@ -96,10 +96,10 @@
 			isa = PBXGroup;
 			children = (
 				5E085D4624B867060028AAE5 /* Detail */,
-				5E085D2D24B863C70028AAE5 /* HotelCell.swift */,
-				5E085D2C24B863C70028AAE5 /* MainView.swift */,
 				5E085D2E24B863C70028AAE5 /* MainViewController.swift */,
+				5E085D2C24B863C70028AAE5 /* MainView.swift */,
 				5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */,
+				5E085D2D24B863C70028AAE5 /* HotelCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -126,9 +126,9 @@
 		5E085D4624B867060028AAE5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */,
-				5E085D3924B863EF0028AAE5 /* DetailView.swift */,
 				5E085D3824B863EF0028AAE5 /* DetailViewController.swift */,
+				5E085D3924B863EF0028AAE5 /* DetailView.swift */,
+				5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
