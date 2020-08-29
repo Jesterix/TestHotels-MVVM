@@ -10,11 +10,15 @@ final class DetailViewModel {
     
     private let dataManager: NetworkManager
     
+    private let repository: Repository
+    
     init(
         dataManager: NetworkManager,
+        repository: Repository,
         hotel: Hotel
     ) {
         self.dataManager = dataManager
+        self.repository = repository
         self.hotel = hotel
     }
     

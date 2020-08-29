@@ -4,10 +4,8 @@ final class DetailViewController: UIViewController {
     var detailView: DetailView!
     var viewModel: DetailViewModel
     
-    init(hotel: Hotel) {
-        self.viewModel = DetailViewModel(
-            dataManager: NetworkManager(),
-            hotel: hotel)
+    init(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     

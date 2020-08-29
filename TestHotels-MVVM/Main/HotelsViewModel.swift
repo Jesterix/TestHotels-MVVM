@@ -6,8 +6,12 @@ final class HotelsViewModel {
     let refreshing = Observable<Bool>(false)
     
     private let dataManager: NetworkManager
-    init(dataManager: NetworkManager) {
+    
+    private let repository: Repository
+    
+    init(dataManager: NetworkManager, repository: Repository) {
         self.dataManager = dataManager
+        self.repository = repository
     }
     
     func fetch() {

@@ -92,8 +92,9 @@ extension MainViewController: UITableViewDelegate {
     ) {
         tableView.deselectRow(at: indexPath, animated: false)
         
+        let detailViewController = Configurator().createDetail(with:  self.viewModel.hotels.value[indexPath.row])
         self.navigationController?.pushViewController(
-            DetailViewController(hotel: self.viewModel.hotels.value[indexPath.row]),
+            detailViewController,
             animated: true)
     }
 }

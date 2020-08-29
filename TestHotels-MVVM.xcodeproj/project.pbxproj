@@ -28,6 +28,7 @@
 		5EAC230624FA4A9B003BA90E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5EAC230524FA4A9B003BA90E /* RealmSwift */; };
 		5EAC230824FA4CC2003BA90E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230724FA4CC2003BA90E /* Repository.swift */; };
 		5EAC230A24FA4D27003BA90E /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230924FA4D27003BA90E /* RepositoryError.swift */; };
+		5EAC230D24FA54D1003BA90E /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230C24FA54D1003BA90E /* Configurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		5EAC230724FA4CC2003BA90E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5EAC230924FA4D27003BA90E /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		5EAC230C24FA54D1003BA90E /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +90,8 @@
 			children = (
 				5E085CFC24B862AB0028AAE5 /* AppDelegate.swift */,
 				5E085CFE24B862AB0028AAE5 /* SceneDelegate.swift */,
-				5EAC230724FA4CC2003BA90E /* Repository.swift */,
-				5EAC230924FA4D27003BA90E /* RepositoryError.swift */,
+				5EAC230C24FA54D1003BA90E /* Configurator.swift */,
+				5EAC230B24FA4E1A003BA90E /* DataBase */,
 				5E085D4324B866D20028AAE5 /* Main */,
 				5E085D4424B866E90028AAE5 /* Network */,
 				5E085D4524B866FB0028AAE5 /* Extensions */,
@@ -139,6 +141,15 @@
 				5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		5EAC230B24FA4E1A003BA90E /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				5EAC230724FA4CC2003BA90E /* Repository.swift */,
+				5EAC230924FA4D27003BA90E /* RepositoryError.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E085D3A24B863EF0028AAE5 /* DetailViewController.swift in Sources */,
+				5EAC230D24FA54D1003BA90E /* Configurator.swift in Sources */,
 				5E085D4824B86AA40028AAE5 /* HotelsViewModel.swift in Sources */,
 				5EAC230824FA4CC2003BA90E /* Repository.swift in Sources */,
 				5E085D3F24B863FB0028AAE5 /* UIView+SnapKit.swift in Sources */,

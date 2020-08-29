@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController(
-            rootViewController: MainViewController(viewModel: HotelsViewModel(dataManager: NetworkManager())))
+            rootViewController: Configurator().createMain())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
