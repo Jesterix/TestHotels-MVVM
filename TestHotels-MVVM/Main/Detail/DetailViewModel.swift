@@ -39,21 +39,7 @@ final class DetailViewModel {
             
             DispatchQueue.main.async {
                 self.getHotelDetails()
-                
-                guard let imageName = self.details.value?.imageName else {
-                    self.refreshing.value = false
-                    return
-                }
-                
-                self.dataManager.getHotelImage(imageName: imageName) { result in
-                    switch result {
-                    case .success(let image):
-                        self.image.value = image
-                    case .failure(let error):
-                        self.error.value = error
-                    }
-                    self.refreshing.value = false
-                }
+                self.downloadImage()
             }
         }
     }
@@ -63,6 +49,23 @@ final class DetailViewModel {
                 return
         }
         details.value = detailsById.converted()
+    }
+    
+    private func downloadImage() {
+        guard let imageName = self.details.value?.imageName else {
+            self.refreshing.value = false
+            return
+        }
+        
+        self.dataManager.getHotelImage(imageName: imageName) { result in
+            switch result {
+            case .success(let image):
+                self.image.value = image
+            case .failure(let error):
+                self.error.value = error
+            }
+            self.refreshing.value = false
+        }
     }
 }
 
