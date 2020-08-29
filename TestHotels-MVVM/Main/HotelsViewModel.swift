@@ -1,4 +1,5 @@
 import Bond
+import Foundation
 
 final class HotelsViewModel {
     let hotels = Observable<[Hotel]>([])
@@ -20,11 +21,20 @@ final class HotelsViewModel {
         dataManager.getHotelListData { result in
             switch result {
             case .success(let response):
-                self.hotels.value = response
+                DispatchQueue.main.async {
+                    response.forEach { self.repository.save(RealmHotel(from: $0)) }
+                }
             case .failure(let error):
                 self.error.value = error
             }
             self.refreshing.value = false
         }
+        DispatchQueue.main.async {
+            self.getHotels()
+        }
+    }
+    
+    private func getHotels() {
+        hotels.value = repository.getHotels()
     }
 }

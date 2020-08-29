@@ -29,6 +29,7 @@
 		5EAC230824FA4CC2003BA90E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230724FA4CC2003BA90E /* Repository.swift */; };
 		5EAC230A24FA4D27003BA90E /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230924FA4D27003BA90E /* RepositoryError.swift */; };
 		5EAC230D24FA54D1003BA90E /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230C24FA54D1003BA90E /* Configurator.swift */; };
+		5EAC230F24FA610E003BA90E /* RealmHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230E24FA610E003BA90E /* RealmHotel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		5EAC230724FA4CC2003BA90E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5EAC230924FA4D27003BA90E /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		5EAC230C24FA54D1003BA90E /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		5EAC230E24FA610E003BA90E /* RealmHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHotel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				5EAC230724FA4CC2003BA90E /* Repository.swift */,
+				5EAC230E24FA610E003BA90E /* RealmHotel.swift */,
 				5EAC230924FA4D27003BA90E /* RepositoryError.swift */,
 			);
 			path = DataBase;
@@ -240,6 +243,7 @@
 				5E085D3524B863E00028AAE5 /* NetworkManager.swift in Sources */,
 				5E085CFD24B862AB0028AAE5 /* AppDelegate.swift in Sources */,
 				5E085D3B24B863EF0028AAE5 /* DetailView.swift in Sources */,
+				5EAC230F24FA610E003BA90E /* RealmHotel.swift in Sources */,
 				5E085D2F24B863C70028AAE5 /* MainView.swift in Sources */,
 				5E085D3024B863C70028AAE5 /* HotelCell.swift in Sources */,
 				5E085CFF24B862AB0028AAE5 /* SceneDelegate.swift in Sources */,

@@ -11,6 +11,22 @@ struct Hotel: Codable {
         case id, name, address, stars, distance
         case suitesAvailability = "suites_availability"
     }
+    
+    init(
+        id: Int,
+        name: String,
+        address: String,
+        stars: Double,
+        distance: Double,
+        suitesAvailability: [String]
+    ) {
+        self.id = id
+        self.name = name
+        self.address = address
+        self.stars = stars
+        self.distance = distance
+        self.suitesAvailability = suitesAvailability
+    }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

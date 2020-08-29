@@ -77,3 +77,11 @@ extension Repository {
         errorHandler?(repositoryError)
     }
 }
+
+//MARK: - Objects handling
+extension Repository {
+    func getHotels() -> [Hotel] {
+        let objects = self.realm.objects(RealmHotel.self)
+        return objects.map { $0.converted()}
+    }
+}
