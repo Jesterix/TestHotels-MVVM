@@ -25,6 +25,9 @@
 		5E085D4824B86AA40028AAE5 /* HotelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */; };
 		5E085D4B24B86B6B0028AAE5 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 5E085D4A24B86B6B0028AAE5 /* Bond */; };
 		5E085D4D24B87BE10028AAE5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */; };
+		5EAC230624FA4A9B003BA90E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5EAC230524FA4A9B003BA90E /* RealmSwift */; };
+		5EAC230824FA4CC2003BA90E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230724FA4CC2003BA90E /* Repository.swift */; };
+		5EAC230A24FA4D27003BA90E /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230924FA4D27003BA90E /* RepositoryError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,8 @@
 		5E085D3D24B863FA0028AAE5 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 		5E085D4724B86AA40028AAE5 /* HotelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsViewModel.swift; sourceTree = "<group>"; };
 		5E085D4C24B87BE10028AAE5 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		5EAC230724FA4CC2003BA90E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5EAC230924FA4D27003BA90E /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAC230624FA4A9B003BA90E /* RealmSwift in Frameworks */,
 				5E085D4224B864AA0028AAE5 /* SnapKit in Frameworks */,
 				5E085D4B24B86B6B0028AAE5 /* Bond in Frameworks */,
 			);
@@ -82,6 +88,8 @@
 			children = (
 				5E085CFC24B862AB0028AAE5 /* AppDelegate.swift */,
 				5E085CFE24B862AB0028AAE5 /* SceneDelegate.swift */,
+				5EAC230724FA4CC2003BA90E /* Repository.swift */,
+				5EAC230924FA4D27003BA90E /* RepositoryError.swift */,
 				5E085D4324B866D20028AAE5 /* Main */,
 				5E085D4424B866E90028AAE5 /* Network */,
 				5E085D4524B866FB0028AAE5 /* Extensions */,
@@ -152,6 +160,7 @@
 			packageProductDependencies = (
 				5E085D4124B864AA0028AAE5 /* SnapKit */,
 				5E085D4A24B86B6B0028AAE5 /* Bond */,
+				5EAC230524FA4A9B003BA90E /* RealmSwift */,
 			);
 			productName = "TestHotels-MVVM";
 			productReference = 5E085CF924B862AB0028AAE5 /* TestHotels-MVVM.app */;
@@ -184,6 +193,7 @@
 			packageReferences = (
 				5E085D4024B864AA0028AAE5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5E085D4924B86B6B0028AAE5 /* XCRemoteSwiftPackageReference "Bond" */,
+				5EAC230424FA4A9B003BA90E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 5E085CFA24B862AB0028AAE5 /* Products */;
 			projectDirPath = "";
@@ -213,6 +223,7 @@
 			files = (
 				5E085D3A24B863EF0028AAE5 /* DetailViewController.swift in Sources */,
 				5E085D4824B86AA40028AAE5 /* HotelsViewModel.swift in Sources */,
+				5EAC230824FA4CC2003BA90E /* Repository.swift in Sources */,
 				5E085D3F24B863FB0028AAE5 /* UIView+SnapKit.swift in Sources */,
 				5E085D3524B863E00028AAE5 /* NetworkManager.swift in Sources */,
 				5E085CFD24B862AB0028AAE5 /* AppDelegate.swift in Sources */,
@@ -220,6 +231,7 @@
 				5E085D2F24B863C70028AAE5 /* MainView.swift in Sources */,
 				5E085D3024B863C70028AAE5 /* HotelCell.swift in Sources */,
 				5E085CFF24B862AB0028AAE5 /* SceneDelegate.swift in Sources */,
+				5EAC230A24FA4D27003BA90E /* RepositoryError.swift in Sources */,
 				5E085D4D24B87BE10028AAE5 /* DetailViewModel.swift in Sources */,
 				5E085D3124B863C70028AAE5 /* MainViewController.swift in Sources */,
 				5E085D3624B863E00028AAE5 /* Hotel.swift in Sources */,
@@ -432,6 +444,14 @@
 				minimumVersion = 7.7.1;
 			};
 		};
+		5EAC230424FA4A9B003BA90E /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -444,6 +464,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E085D4924B86B6B0028AAE5 /* XCRemoteSwiftPackageReference "Bond" */;
 			productName = Bond;
+		};
+		5EAC230524FA4A9B003BA90E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EAC230424FA4A9B003BA90E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
