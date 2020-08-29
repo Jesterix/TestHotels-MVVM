@@ -27,10 +27,11 @@ final class HotelsViewModel {
             case .failure(let error):
                 self.error.value = error
             }
-            self.refreshing.value = false
-        }
-        DispatchQueue.main.async {
-            self.getHotels()
+            
+            DispatchQueue.main.async {
+                self.getHotels()
+                self.refreshing.value = false
+            }
         }
     }
     
