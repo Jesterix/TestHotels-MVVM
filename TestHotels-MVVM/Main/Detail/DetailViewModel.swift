@@ -1,5 +1,6 @@
 import Bond
 import UIKit
+import Foundation
 
 final class DetailViewModel {
     let details = Observable<HotelDetails?>(nil)
@@ -28,26 +29,40 @@ final class DetailViewModel {
         dataManager.getHotelDetails(for: String(hotel.id)) { result in
             switch result {
             case .success(let response):
-                self.details.value = response
+                DispatchQueue.main.async {
+                    self.repository.save(RealmHotelDetails(from: response))
+                }
+                
             case .failure(let error):
                 self.error.value = error
             }
             
-            guard let imageName = self.details.value?.imageName else {
-                self.refreshing.value = false
-                return
-            }
-            
-            self.dataManager.getHotelImage(imageName: imageName) { result in
-                switch result {
-                case .success(let image):
-                    self.image.value = image
-                case .failure(let error):
-                    self.error.value = error
+            DispatchQueue.main.async {
+                self.getHotelDetails()
+                
+                guard let imageName = self.details.value?.imageName else {
+                    self.refreshing.value = false
+                    return
                 }
-                self.refreshing.value = false
+                
+                self.dataManager.getHotelImage(imageName: imageName) { result in
+                    switch result {
+                    case .success(let image):
+                        self.image.value = image
+                    case .failure(let error):
+                        self.error.value = error
+                    }
+                    self.refreshing.value = false
+                }
             }
         }
+    }
+    
+    private func getHotelDetails() {
+        guard let detailsById: RealmHotelDetails = repository.getEntity(byId: hotel.id) else {
+                return
+        }
+        details.value = detailsById.converted()
     }
 }
 

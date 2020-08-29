@@ -30,6 +30,7 @@
 		5EAC230A24FA4D27003BA90E /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230924FA4D27003BA90E /* RepositoryError.swift */; };
 		5EAC230D24FA54D1003BA90E /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230C24FA54D1003BA90E /* Configurator.swift */; };
 		5EAC230F24FA610E003BA90E /* RealmHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC230E24FA610E003BA90E /* RealmHotel.swift */; };
+		5EAC231124FA8767003BA90E /* RealmHotelDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC231024FA8767003BA90E /* RealmHotelDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		5EAC230924FA4D27003BA90E /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		5EAC230C24FA54D1003BA90E /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		5EAC230E24FA610E003BA90E /* RealmHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHotel.swift; sourceTree = "<group>"; };
+		5EAC231024FA8767003BA90E /* RealmHotelDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHotelDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				5EAC230724FA4CC2003BA90E /* Repository.swift */,
 				5EAC230E24FA610E003BA90E /* RealmHotel.swift */,
+				5EAC231024FA8767003BA90E /* RealmHotelDetails.swift */,
 				5EAC230924FA4D27003BA90E /* RepositoryError.swift */,
 			);
 			path = DataBase;
@@ -248,6 +251,7 @@
 				5E085D3024B863C70028AAE5 /* HotelCell.swift in Sources */,
 				5E085CFF24B862AB0028AAE5 /* SceneDelegate.swift in Sources */,
 				5EAC230A24FA4D27003BA90E /* RepositoryError.swift in Sources */,
+				5EAC231124FA8767003BA90E /* RealmHotelDetails.swift in Sources */,
 				5E085D4D24B87BE10028AAE5 /* DetailViewModel.swift in Sources */,
 				5E085D3124B863C70028AAE5 /* MainViewController.swift in Sources */,
 				5E085D3624B863E00028AAE5 /* Hotel.swift in Sources */,

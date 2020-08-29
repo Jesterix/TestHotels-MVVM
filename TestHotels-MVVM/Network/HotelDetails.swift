@@ -15,6 +15,28 @@ struct HotelDetails: Codable {
         case imageName = "image"
         case suitesAvailability = "suites_availability"
     }
+    
+    init(
+        id: Int,
+        name: String,
+        address: String,
+        stars: Double,
+        distance: Double,
+        suitesAvailability: [String],
+        imageName: String?,
+        lat: Double,
+        lon: Double
+    ) {
+        self.id = id
+        self.name = name
+        self.address = address
+        self.stars = stars
+        self.distance = distance
+        self.suitesAvailability = suitesAvailability
+        self.imageName = imageName
+        self.lat = lat
+        self.lon = lon
+    }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
