@@ -8,9 +8,9 @@ final class HotelsViewModel {
     
     private let dataManager: NetworkManager
     
-    private let repository: Repository
+    private let repository: DataManager
     
-    init(dataManager: NetworkManager, repository: Repository) {
+    init(dataManager: NetworkManager, repository: DataManager) {
         self.dataManager = dataManager
         self.repository = repository
     }
@@ -22,7 +22,7 @@ final class HotelsViewModel {
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    response.forEach { self.repository.save(RealmHotel(from: $0)) }
+                    response.forEach { self.repository.save(hotel: $0) }
                 }
             case .failure(let error):
                 self.error.value = error

@@ -11,11 +11,11 @@ final class DetailViewModel {
     
     private let dataManager: NetworkManager
     
-    private let repository: Repository
+    private let repository: DataManager
     
     init(
         dataManager: NetworkManager,
-        repository: Repository,
+        repository: DataManager,
         hotel: Hotel
     ) {
         self.dataManager = dataManager
@@ -30,7 +30,7 @@ final class DetailViewModel {
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.repository.save(RealmHotelDetails(from: response))
+                    self.repository.save(details: response)
                 }
                 
             case .failure(let error):
@@ -45,10 +45,10 @@ final class DetailViewModel {
     }
     
     private func getHotelDetails() {
-        guard let detailsById: RealmHotelDetails = repository.getEntity(byId: hotel.id) else {
+        guard let detailsById: HotelDetails = repository.getDetails(byId: hotel.id) else {
                 return
         }
-        details.value = detailsById.converted()
+        details.value = detailsById
     }
     
     private func downloadImage() {

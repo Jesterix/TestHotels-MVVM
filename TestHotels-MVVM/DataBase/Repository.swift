@@ -14,13 +14,13 @@ public final class Repository {
 // MARK: - Save
 extension Repository {
     
-    public func save<T: Object>(_ entity: T) {
+    private func save<T: Object>(_ entity: T) {
         save {
             realm.add(entity, update: .all)
         }
     }
     
-    public func save<T: Object>(_ entities: [T]) {
+    private func save<T: Object>(_ entities: [T]) {
         save {
             realm.add(entities, update: .all)
         }
@@ -41,19 +41,19 @@ extension Repository {
 // MARK: - Find
 extension Repository {
     
-    public func getEntity<T: Object>(byId id: Int) -> T? {
+    private func getEntity<T: Object>(byId id: Int) -> T? {
         return realm.object(ofType: T.self, forPrimaryKey: id)
     }
     
-    public func getEntities<T: Object>(byIds ids: [Int]) -> [T] {
+    private func getEntities<T: Object>(byIds ids: [Int]) -> [T] {
         return ids.compactMap { getEntity(byId: $0) }
     }
     
-    public func getEntity<T: Object>(byStringId id: String) -> T? {
+    private func getEntity<T: Object>(byStringId id: String) -> T? {
         return realm.object(ofType: T.self, forPrimaryKey: id)
     }
     
-    public func getEntities<T: Object>(byStringIds ids: [String]) -> [T] {
+    private func getEntities<T: Object>(byStringIds ids: [String]) -> [T] {
         return ids.compactMap { getEntity(byStringId: $0) }
     }
 }
@@ -70,10 +70,23 @@ extension Repository {
     }
 }
 
-//MARK: - Objects handling
-extension Repository {
+//MARK: - DataManager objects handling
+extension Repository: DataManager {
     func getHotels() -> [Hotel] {
         let objects = self.realm.objects(RealmHotel.self)
         return objects.map { $0.converted()}
+    }
+    
+    func save(details: HotelDetails) {
+        save(RealmHotelDetails(from: details))
+    }
+    
+    func save(hotel: Hotel) {
+        save(RealmHotel(from: hotel))
+    }
+    
+    func getDetails(byId: Int) -> HotelDetails? {
+        let details: RealmHotelDetails? = getEntity(byId: byId)
+        return details?.converted()
     }
 }
