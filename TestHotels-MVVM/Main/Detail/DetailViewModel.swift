@@ -9,16 +9,16 @@ final class DetailViewModel {
     let error = Observable<Error?>(nil)
     let refreshing = Observable<Bool>(false)
     
-    private let dataManager: NetworkManager
+    private let networkManager: NetworkManager
     
     private let repository: DataManager
     
     init(
-        dataManager: NetworkManager,
+        networkManager: NetworkManager,
         repository: DataManager,
         hotel: Hotel
     ) {
-        self.dataManager = dataManager
+        self.networkManager = networkManager
         self.repository = repository
         self.hotel = hotel
     }
@@ -26,7 +26,7 @@ final class DetailViewModel {
     func fetch() {
         refreshing.value = true
         
-        dataManager.getHotelDetails(for: String(hotel.id)) { result in
+        networkManager.getHotelDetails(for: String(hotel.id)) { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
@@ -57,7 +57,7 @@ final class DetailViewModel {
             return
         }
         
-        self.dataManager.getHotelImage(imageName: imageName) { result in
+        self.networkManager.getHotelImage(imageName: imageName) { result in
             switch result {
             case .success(let image):
                 self.image.value = image

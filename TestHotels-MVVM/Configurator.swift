@@ -4,13 +4,13 @@ final class Configurator {
     
     public func createMain() -> MainViewController {
         return MainViewController(viewModel: HotelsViewModel(
-            dataManager: networkManager,
+            networkManager: networkManager,
             repository: repository))
     }
     
     public func createDetail(with hotel: Hotel) -> DetailViewController {
         return DetailViewController(viewModel: DetailViewModel(
-            dataManager: networkManager,
+            networkManager: networkManager,
             repository: repository,
             hotel: hotel))
     }

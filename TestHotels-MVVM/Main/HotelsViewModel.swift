@@ -6,19 +6,19 @@ final class HotelsViewModel {
     let error = Observable<Error?>(nil)
     let refreshing = Observable<Bool>(false)
     
-    private let dataManager: NetworkManager
+    private let networkManager: NetworkManager
     
     private let repository: DataManager
     
-    init(dataManager: NetworkManager, repository: DataManager) {
-        self.dataManager = dataManager
+    init(networkManager: NetworkManager, repository: DataManager) {
+        self.networkManager = networkManager
         self.repository = repository
     }
     
     func fetch() {
         refreshing.value = true
         
-        dataManager.getHotelListData { result in
+        networkManager.getHotelListData { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
