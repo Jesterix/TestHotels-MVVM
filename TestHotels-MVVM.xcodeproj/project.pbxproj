@@ -101,9 +101,7 @@
 				5E085CFC24B862AB0028AAE5 /* AppDelegate.swift */,
 				5E085CFE24B862AB0028AAE5 /* SceneDelegate.swift */,
 				5EAC230C24FA54D1003BA90E /* Configurator.swift */,
-				5EB28F4624FBD44E00C016E5 /* ServiceLocator.swift */,
-				5EB28F4824FBD79800C016E5 /* DataManager.swift */,
-				5EB28F4A24FBDFE800C016E5 /* DataGetter.swift */,
+				5EB28F4C24FBE03B00C016E5 /* Services */,
 				5EAC230B24FA4E1A003BA90E /* DataBase */,
 				5E085D4324B866D20028AAE5 /* Main */,
 				5E085D4424B866E90028AAE5 /* Network */,
@@ -165,6 +163,16 @@
 				5EAC230924FA4D27003BA90E /* RepositoryError.swift */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		5EB28F4C24FBE03B00C016E5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5EB28F4624FBD44E00C016E5 /* ServiceLocator.swift */,
+				5EB28F4824FBD79800C016E5 /* DataManager.swift */,
+				5EB28F4A24FBDFE800C016E5 /* DataGetter.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
