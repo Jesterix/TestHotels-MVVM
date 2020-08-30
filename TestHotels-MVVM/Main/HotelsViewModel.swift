@@ -6,11 +6,11 @@ final class HotelsViewModel {
     let error = Observable<Error?>(nil)
     let refreshing = Observable<Bool>(false)
     
-    private let networkManager: NetworkManager
+    private let networkManager: DataGetter
     
     private let repository: DataManager
     
-    init(networkManager: NetworkManager, repository: DataManager) {
+    init(networkManager: DataGetter, repository: DataManager) {
         self.networkManager = networkManager
         self.repository = repository
     }

@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class NetworkManager {
+class NetworkManager: DataGetter {
     var baseURL = URL(string: "https://raw.githubusercontent.com/Jesterix/TestHotelsFiles/master")
     var baseImageURL = URL(string: "https://github.com/Jesterix/TestHotelsFiles/raw/master")
 

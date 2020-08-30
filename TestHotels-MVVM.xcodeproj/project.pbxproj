@@ -33,6 +33,7 @@
 		5EAC231124FA8767003BA90E /* RealmHotelDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC231024FA8767003BA90E /* RealmHotelDetails.swift */; };
 		5EB28F4724FBD44E00C016E5 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB28F4624FBD44E00C016E5 /* ServiceLocator.swift */; };
 		5EB28F4924FBD79800C016E5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB28F4824FBD79800C016E5 /* DataManager.swift */; };
+		5EB28F4B24FBDFE800C016E5 /* DataGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB28F4A24FBDFE800C016E5 /* DataGetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		5EAC231024FA8767003BA90E /* RealmHotelDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHotelDetails.swift; sourceTree = "<group>"; };
 		5EB28F4624FBD44E00C016E5 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		5EB28F4824FBD79800C016E5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5EB28F4A24FBDFE800C016E5 /* DataGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				5EAC230C24FA54D1003BA90E /* Configurator.swift */,
 				5EB28F4624FBD44E00C016E5 /* ServiceLocator.swift */,
 				5EB28F4824FBD79800C016E5 /* DataManager.swift */,
+				5EB28F4A24FBDFE800C016E5 /* DataGetter.swift */,
 				5EAC230B24FA4E1A003BA90E /* DataBase */,
 				5E085D4324B866D20028AAE5 /* Main */,
 				5E085D4424B866E90028AAE5 /* Network */,
@@ -254,6 +257,7 @@
 				5E085D3B24B863EF0028AAE5 /* DetailView.swift in Sources */,
 				5EAC230F24FA610E003BA90E /* RealmHotel.swift in Sources */,
 				5E085D2F24B863C70028AAE5 /* MainView.swift in Sources */,
+				5EB28F4B24FBDFE800C016E5 /* DataGetter.swift in Sources */,
 				5EB28F4924FBD79800C016E5 /* DataManager.swift in Sources */,
 				5E085D3024B863C70028AAE5 /* HotelCell.swift in Sources */,
 				5E085CFF24B862AB0028AAE5 /* SceneDelegate.swift in Sources */,
