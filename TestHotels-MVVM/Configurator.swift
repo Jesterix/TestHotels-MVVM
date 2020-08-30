@@ -1,17 +1,21 @@
 final class Configurator {
-    private let networkManager = NetworkManager()
-    private let repository = Repository()
+    private var serviceLocator = ServiceLocator()
+
+    init() {
+        serviceLocator.registerService(service: NetworkManager() as DataGetter)
+        serviceLocator.registerService(service: Repository() as DataManager)
+    }
     
     public func createMain() -> MainViewController {
         return MainViewController(viewModel: HotelsViewModel(
-            networkManager: networkManager,
-            repository: repository))
+            networkManager: serviceLocator.getService(),
+            repository: serviceLocator.getService()))
     }
     
     public func createDetail(with hotel: Hotel) -> DetailViewController {
         return DetailViewController(viewModel: DetailViewModel(
-            networkManager: networkManager,
-            repository: repository,
+            networkManager: serviceLocator.getService(),
+            repository: serviceLocator.getService(),
             hotel: hotel))
     }
 }
